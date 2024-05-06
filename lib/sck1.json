@@ -7,9 +7,9 @@
     "ban": "false",
     "warn": {},
     "rank": {
-      "exp": 868,
+      "exp": 1134,
       "level": 4,
-      "ttms": 123,
+      "ttms": 130,
       "need": 2672
     }
   },
@@ -35,10 +35,10 @@
     "ban": "false",
     "warn": {},
     "rank": {
-      "exp": 271,
-      "level": 1,
-      "ttms": 15,
-      "need": 167
+      "exp": 39,
+      "level": 2,
+      "ttms": 19,
+      "need": 668
     }
   },
   "2348079029778@s.whatsapp.net": {
@@ -91,9 +91,9 @@
     "ban": "false",
     "warn": {},
     "rank": {
-      "exp": 699,
+      "exp": 703,
       "level": 4,
-      "ttms": 147,
+      "ttms": 148,
       "need": 2672
     }
   },
@@ -273,9 +273,9 @@
     "ban": "false",
     "warn": {},
     "rank": {
-      "exp": 24,
+      "exp": 30,
       "level": 1,
-      "ttms": 4,
+      "ttms": 5,
       "need": 167
     }
   },
