@@ -1,16 +1,16 @@
 {
   "2349051080824@s.whatsapp.net": {
     "id": "2349051080824@s.whatsapp.net",
-    "name": "sir",
+    "name": "👁️👁️🫵🏽",
     "times": 0,
     "permit": "false",
     "ban": "false",
     "warn": {},
     "rank": {
-      "exp": 875,
-      "level": 3,
-      "ttms": 99,
-      "need": 1336
+      "exp": 764,
+      "level": 4,
+      "ttms": 122,
+      "need": 2672
     }
   },
   "2348105609101@s.whatsapp.net": {
@@ -21,9 +21,9 @@
     "ban": "false",
     "warn": {},
     "rank": {
-      "exp": 198,
+      "exp": 212,
       "level": 1,
-      "ttms": 14,
+      "ttms": 18,
       "need": 167
     }
   },
@@ -35,9 +35,9 @@
     "ban": "false",
     "warn": {},
     "rank": {
-      "exp": 56,
+      "exp": 215,
       "level": 1,
-      "ttms": 4,
+      "ttms": 12,
       "need": 167
     }
   },
@@ -77,9 +77,9 @@
     "ban": "false",
     "warn": {},
     "rank": {
-      "exp": 154,
+      "exp": 176,
       "level": 2,
-      "ttms": 35,
+      "ttms": 38,
       "need": 668
     }
   },
@@ -91,9 +91,9 @@
     "ban": "false",
     "warn": {},
     "rank": {
-      "exp": 668,
+      "exp": 691,
       "level": 4,
-      "ttms": 145,
+      "ttms": 146,
       "need": 2672
     }
   },
@@ -119,9 +119,9 @@
     "ban": "false",
     "warn": {},
     "rank": {
-      "exp": 22,
+      "exp": 131,
       "level": 1,
-      "ttms": 2,
+      "ttms": 10,
       "need": 167
     }
   },
@@ -147,9 +147,9 @@
     "ban": "false",
     "warn": {},
     "rank": {
-      "exp": 5,
+      "exp": 51,
       "level": 1,
-      "ttms": 2,
+      "ttms": 4,
       "need": 167
     }
   },
@@ -175,9 +175,9 @@
     "ban": "false",
     "warn": {},
     "rank": {
-      "exp": 8,
+      "exp": 47,
       "level": 1,
-      "ttms": 2,
+      "ttms": 3,
       "need": 167
     }
   },
@@ -245,9 +245,9 @@
     "ban": "false",
     "warn": {},
     "rank": {
-      "exp": 7,
+      "exp": 28,
       "level": 1,
-      "ttms": 2,
+      "ttms": 3,
       "need": 167
     }
   },
@@ -264,5 +264,42 @@
       "ttms": 2,
       "need": 167
     }
+  },
+  "2347043587035@s.whatsapp.net": {
+    "id": "2347043587035@s.whatsapp.net",
+    "name": "LoveSausage💀💀💀",
+    "times": 0,
+    "permit": "false",
+    "ban": "false",
+    "warn": {},
+    "rank": {
+      "exp": 3,
+      "level": 1,
+      "ttms": 2,
+      "need": 167
+    }
+  },
+  "2348157453897@s.whatsapp.net": {
+    "id": "2348157453897@s.whatsapp.net",
+    "name": "michaelubani33@gmail.com",
+    "times": 0,
+    "permit": "false",
+    "ban": "false",
+    "warn": {},
+    "rank": {
+      "exp": 25,
+      "level": 1,
+      "ttms": 2,
+      "need": 167
+    }
+  },
+  "2348112681912@s.whatsapp.net": {
+    "id": "2348112681912@s.whatsapp.net",
+    "name": "Merry Makers MEDIA",
+    "times": 0,
+    "permit": "false",
+    "ban": "false",
+    "warn": {},
+    "rank": {}
   }
 }

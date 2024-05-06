@@ -248,5 +248,30 @@
     "chatbot": "false",
     "mute": "false",
     "unmute": "false"
+  },
+  "120363253260413143@g.us": {
+    "id": "120363253260413143@g.us",
+    "events": "false",
+    "nsfw": "false",
+    "pdm": "false",
+    "antipromote": "false",
+    "antidemote": "false",
+    "welcome": "false",
+    "goodbye": "false",
+    "welcometext": "*@user @pp Welcome Bruhhh In @gname.....!!!!!😊👇🏻♥️* \n@desc\n\n *______________*\n  *Support us by Subscribing*\n@yt_channel",
+    "goodbyetext": "*@user @pp Left From @gname.....!!!!!😒👆🏻♥️* \n@desc\n *______________*\n  *Support us by Subscribing*\n@yt_channel",
+    "botenable": "true",
+    "antilink": "false",
+    "antiword": {},
+    "antifake": "false",
+    "antispam": "false",
+    "antitag": "false",
+    "antibot": "false",
+    "onlyadmin": "false",
+    "economy": "false",
+    "disablecmds": "false",
+    "chatbot": "false",
+    "mute": "false",
+    "unmute": "false"
   }
 }
