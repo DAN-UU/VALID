@@ -1,0 +1,15 @@
+{
+  "2349051080824@s.whatsapp.net": {
+    "id": "2349051080824@s.whatsapp.net",
+    "data": {
+      "presence": "",
+      "read_status": "true",
+      "save_status": "false",
+      "readmessage": "false",
+      "readcmds": "true",
+      "send_status": "true",
+      "announce": {},
+      "contacts": {}
+    }
+  }
+}

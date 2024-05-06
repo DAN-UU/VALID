@@ -1,9 +1,10 @@
 /**
+
 //══════════════════════════════════════════════════════════════════════════════════════════════════════//
 //                                                                                                      //
-//                                ＷＨＡＴＳＡＰＰ ＢＯＴ－ＭＤ ＢＥＴＡ                                   //
+//                                ＷＨＡＴＳＡＰＰ ＢＯＴ－ＭＤ ＢＥＴＡ                                      //
 //                                                                                                      // 
-//                                         Ｖ：1．2．8                                                   // 
+//                                         Ｖ：１．０．１                                                 // 
 //                                                                                                      // 
 //            ███████╗██╗   ██╗██╗  ██╗ █████╗ ██╗██╗         ███╗   ███╗██████╗                        //
 //            ██╔════╝██║   ██║██║  ██║██╔══██╗██║██║         ████╗ ████║██╔══██╗                       //
@@ -15,32 +16,52 @@
 //                                                                                                      //
 //                                                                                                      //
 //══════════════════════════════════════════════════════════════════════════════════════════════════════//
+
+CURRENTLY RUNNING ON BETA VERSION!!
 *
    * @project_name : Suhail-Md
    * @author : Suhail Tech Info
-   * @youtube : https://www.youtube.com/@SuhailTechInfo
+   * @youtube : https://www.youtube.com/c/@SuhailTechInfo0
    * @description : Suhail-Md ,A Multi-functional whatsapp user bot.
-   * @version 1.2.8
+   * @version 1.0.9
 *
+   * Licensed under the  GPL-3.0 License;
 * 
    * Created By Suhail Tech Info.
-   * © 2024 Suhail-Md.
+   * © 2023 Suhail-Md.
+* 
+   * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   * SOFTWARE.
+ **/
+
+
+/*
+{
+   pattern: "search",
+   type: "notes",
+}
 */
 
 
 
-let Suhail_Md = "Suhail MD Whatsapp bot md"
+
+
+
 
 
 const moment = require('moment-timezone')
-const {fetchJson,smd, tlang,send, getBuffer, prefix, Config ,groupdb } = require('../lib')
+const {fetchJson,smd, tlang,send, getBuffer, prefix, Config ,groupdb } = require(lib_dir)
 let gis = require("async-g-i-s");
 const axios = require('axios')
 const fetch = require('node-fetch')
 
    //---------------------------------------------------------------------------
-   const { shazam } = require('../lib')
-   let yts = require("secktor-pack");
+//    let yts = require("secktor-pack"); 
    smd({
            pattern: "find",
            alias :["shazam"],
@@ -50,9 +71,11 @@ const fetch = require('node-fetch')
        },
        async(message) => {
          try{
+             
             let mime = message.reply_message ? message.reply_message.mtype : ''
             if (!/audio/.test(mime)) return message.reply(`Reply audio ${prefix}find`);
             let buff = await message.reply_message.download();
+           const { shazam } = require(lib_dir)
             let data = await shazam(buff);
             if (!data || !data.status) return message.send(data);
             let h =`*TITLE: _${data.title}_* \n*ARTIST: _${data.artists}_*\n *ALBUM:* _${data.album}_ `
@@ -125,24 +148,24 @@ async(m) => {
 
 
     //---------------------------------------------------------------------------
-smd({pattern: 'lyrics', alias :['lyric'],category: "search", desc: "Searche lyrics of given song name",use: '<text | song>',filename: __filename,},
+// smd({pattern: 'lyrics', alias :['lyric'],category: "search", desc: "Searche lyrics of given song name",use: '<text | song>',filename: __filename,},
 
-    async(message, text,{cmdName}) => {
-    if (!text) return message.reply(`*_Uhh please, give me song name_*\n*_Example ${prefix+cmdName} blue eyes punjabi_*`);
-    try {
-      const res = await ( await fetch(`https://inrl-web.onrender.com/api/lyrics?text=${text}`) ).json();
-      if(!res.status) return message.send("*Please Provide valid name!!!*");
-      if(!res.result) return message.send("*There's a problem, try again later!*");
-      const { thumb,lyrics,title,artist } = res.result, tbl= "```", tcl ="*", tdl = "_*", contextInfo = { externalAdReply: { ...(await message.bot.contextInfo("𝗦𝗨𝗛𝗔𝗜𝗟-𝗠𝗗",`Lyrics-${text}`))} }
-  await send(message, `*𝚃𝚒𝚝𝚕𝚎:* ${title}\n*𝙰𝚛𝚝𝚒𝚜𝚝:* ${artist} \n${tbl}${lyrics}${tbl} `,{contextInfo  : contextInfo },"");
+//     async(message, text,{cmdName}) => {
+//     if (!text) return message.reply(`*_Uhh please, give me song name_*\n*_Example ${prefix+cmdName} blue eyes punjabi_*`);
+//     try {
+//       const res = await ( await fetch(`https://inrl-web.onrender.com/api/lyrics?text=${text}`) ).json();
+//       if(!res.status) return message.send("*Please Provide valid name!!!*");
+//       if(!res.result) return message.send("*There's a problem, try again later!*");
+//       const { thumb,lyrics,title,artist } = res.result, tbl= "```", tcl ="*", tdl = "_*", contextInfo = { externalAdReply: { ...(await message.bot.contextInfo("𝗦𝗨𝗛𝗔𝗜𝗟-𝗠𝗗",`Lyrics-${text}`))} }
+//   await send(message, `*𝚃𝚒𝚝𝚕𝚎:* ${title}\n*𝙰𝚛𝚝𝚒𝚜𝚝:* ${artist} \n${tbl}${lyrics}${tbl} `,{contextInfo  : contextInfo },"");
 
-}catch(e){return await message.error(`${e}\n\n command: ${cmdName}`,e,`*_Didn't get any lyrics, Sorry!_*`) }
-
-
+// }catch(e){return await message.error(`${e}\n\n command: ${cmdName}`,e,`*_Didn't get any lyrics, Sorry!_*`) }
 
 
 
-})
+
+
+// })
 
 
     //---------------------------------------------------------------------------
@@ -155,6 +178,7 @@ smd({
         },
         async(message, match) => {
           try{
+             message.react("🔍")
             if (!match) return message.reply(`_Name a Series or movie ${tlang().greet}._`);
             let {data} = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${match}&plot=full`);
             if(!data || data.cod == '404') return await message.reply(`*_Please provide valid country name!_*`)
@@ -192,6 +216,7 @@ smd({
         },
         async(message, text) => {
           try{
+
             if (!text) return message.reply(`*_Give me city name, ${message.isCreator ? "Buddy" : "Idiot"}!!_*`);
             let {data} = await axios.get( `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`);
             if(!data || data.cod === '404') return await message.reply(`*_Please provide valid city name!_*`)
@@ -311,9 +336,9 @@ smd({
             google({ 'query': text}).then(res => {
                 let msg= `Google Search From : ${text} \n\n`;
                 for (let g of res) {
-                    msg+= `➣ Title : ${g.title}\n`;
-                    msg+= `➣ Description : ${g.snippet}\n`;
-                    msg+= `➣ Link : ${g.link}\n\n────────────────────────\n\n`;
+                    msg+= `➣ *Title : ${g.title}*\n`;
+                    msg+= `➣ *Description :* ${g.snippet}\n`;
+                    msg+= `➣ *Link :* _${g.link}_\n\n────────────────────────\n\n`;
                 }
 
                 return message.reply(msg);
@@ -322,6 +347,133 @@ smd({
 
         }
     )
+
+
+
+// let downImages = async(query="",safe="on")=>{
+//     if(!query) throw "need search query"
+// const gimg_api = async(query)=>{
+//     let { data } = await axios(`${api_smd}/api/gimg?query=${encodeURIComponent(query)}` )
+//     if(data && data.status && Array.isArray(data.result) && data.result.length > 0) return data.result
+//     else return false
+// }
+// const bing_api = async(query)=>{
+//     let { data } = await axios(`${api_smd}/api/bingimg?query=${encodeURIComponent(query)}` )
+//     if(data && data.status && Array.isArray(data.result) && data.result.length > 0) return data.result
+//     else return false
+// }
+// const pkg_api = async(query)=>{
+//     let data = await gis(query, { query: { safe },
+//         userAgent:  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
+//       },)
+//     if(data && Array.isArray(data) && data.length > 0) return data
+//     else return false
+// }
+ 
+// let func_Img = [pkg_api,gimg_api,bing_api]
+// let res = false
+// for(i=0;i<func_Img.length;i++)
+// {
+//     try{
+//         res = await func_Img[i](query)
+//         if(res && res.length >0) break;
+//     }catch(e){}
+// }
+// return res
+
+// }
+
+
+
+const downloadImages = async (query = "", safe = "on") => {
+    if (!query) throw "need search query";
+
+    // Function to fetch images from the gimg API
+    const gimg_api = async (query) => {
+        try {
+            let { data } = await axios.get(`${api_smd}/api/gimg?query=${encodeURIComponent(query)}`);
+            if (data && data.status && Array.isArray(data.result) && data.result.length > 0) {
+                return data.result;
+            }
+            return false;
+        } catch (error) {
+            console.error("Error fetching images from gimg smd-api-1.vercel.app:", error);
+            return false;
+        }
+    };
+
+    // Function to fetch images from the bingimg API
+    const bing_api = async (query) => {
+        try {
+            let { data } = await axios.get(`${api_smd}/api/bingimg?query=${encodeURIComponent(query)}`);
+            if (data && data.status && Array.isArray(data.result) && data.result.length > 0) {
+                return data.result;
+            }
+            return false;
+        } catch (error) {
+            console.error("Error fetching images from bingimg (smd-api-1.vercel.app) API:", error);
+            return false;
+        }
+    };
+
+    // Function to fetch images using the g-i-s package (Google Images)
+    const pkg_api = async (query) => {
+        try {
+            let data = await gis(query, {
+                query: { safe },
+                userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
+            });
+            if (data && Array.isArray(data) && data.length > 0) {
+                return data;
+            }
+            return false;
+        } catch (error) {
+            console.error("Error fetching images from Google Images:", error);
+            return false;
+        }
+    };
+
+    // Array of functions to fetch images from different APIs
+    let func_Img = [pkg_api, gimg_api, bing_api];
+
+    // Iterate over the functions and try fetching images
+    let res = false;
+    for (let i = 0; i < func_Img.length; i++) {
+        try {
+            res = await func_Img[i](query);
+            if (res && res.length > 0) break; // If images are found, break the loop
+        } catch (e) {
+            console.error("Error fetching images:", e);
+        }
+    }
+
+    return res;
+};
+
+// Example usage
+// downImages("your_query")
+//     .then(images => {
+//         console.log("Images:", images);
+//     })
+//     .catch(error => {
+//         console.error("Error:", error);
+//     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     //---------------------------------------------------------------------------
@@ -339,26 +491,41 @@ try{
    if (!text) return message.reply(`Provide me a query!\n*Ex : .image luffy |10*`)
    
    let name1 = text.split("|")[0] || text
-   let name2 = text.split("|")[1] || `5`
+   let name2 = text.split("|")[1] || 5
 
 
     let nn = parseInt(name2) || 5
-    let Group = await groupdb.findOne({ id: message.chat })
-    let safe = Group.nsfw == "true" ? "off" : "on"
-try{
-    let n = await gis(name1, { query: { safe: safe },
-        userAgent:  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
-      },)
-console.log("images results : " , n)
 
-    if(n && n[0]){
+
+
+
+
+
+
+
+
+
+
+
+
+try{
+    // let Group = await groupdb.findOne({ id: message.chat }) 
+    // let safe = Group.nsfw === "true" ? "off" : "on" 
+
+    // let n = await gis(name1, { query: { safe },
+    //     userAgent:  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
+    //   },)
+// console.log("images results : " , n) 
+
+let n = await downloadImages(name1,"off")
+if(n && n[0]){
     nn = n && n.length > nn ? nn : n.length 
-   message.reply(`*_Sending images of '${name1}' in chat!_*`)
+   await message.reply(`*_Sending images of '${name1}' in chat!_*`)
     for (let i = 0; i < nn; i++) {
         try{
-        let random = Math.floor(Math.random() * n.length)
-        message.bot.sendFromUrl(message.jid ,n[random].url,"",message,{},"image" )   
-        n.splice(random, 1);
+            let random = Math.floor(Math.random() * n.length)
+            message.bot.sendFromUrl(message.jid ,n[random].url || n[random],"",message,{},"image" )   
+            n.splice(random, 1);
     }catch {}
     }
     return ;
@@ -493,7 +660,7 @@ smd({
                   try { var anu1 = await message.bot.fetchStatus(anu[0].jid); } 
                   catch { var anu1 = '401' ; }
                   if (anu1 == '401' || anu1.status.length == 0) { nobio += `wa.me/${anu[0].jid.split("@")[0]}\n` ; } 
-                  else {  text += `🧐 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n ✨*Bio :* ${anu1.status}\n🍁*Last update :* ${moment(anu1.setAt).tz('Asia/Karachi').format('HH:mm:ss DD/MM/YYYY')}\n\n` ;   }
+                  else {  text += `🧐 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n ✨*Bio :* ${anu1.status}\n🍁*Last update :* ${moment(anu1.setAt).tz(timezone).format('HH:mm:ss DD/MM/YYYY')}\n\n` ;   }
             } catch { nowhatsapp += ` ≛ ${number0}${i}${number1}\n`; }
         }
         return await message.reply(`${text}${nobio}${nowhatsapp}`)
