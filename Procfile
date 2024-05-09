@@ -1,4 +1,4 @@
-web: sh -c " npm i && node app.js"
+web: sh -c " npm install && node app.js"
 
 
 
