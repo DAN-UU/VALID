@@ -1,4 +1,4 @@
-web: npm start 
+web: sh -c " npm install && node app.js"
 
 
 
